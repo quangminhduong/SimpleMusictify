@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <h1>Welcome {{ user_name }}!</h1>
+    <form method="get" action="{{ url_for('home.logout') }}">
+      <input type="submit" name="logout" value="Logout">
+    </form>
+  </body>
+</html>
+

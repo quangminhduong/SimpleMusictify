@@ -1,0 +1,71 @@
+body {
+  background-color: #8B0000; /* dark red */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+}
+
+.register-box {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 400px; /* extra height for the additional input field */
+}
+
+
+.login-box h1, .register-box h1 {
+  margin-top: 0;
+}
+
+.login-box label, .register-box label {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.login-box input[type="email"], .login-box input[type="password"], 
+.register-box input[type="email"], .register-box input[type="password"], 
+.register-box input[type="user_name"] { /* new input field for username */
+  flex: 1;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-size: 16px;
+}
+
+.login-box input[type="submit"], .register-box input[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-box input[type="submit"]:hover, .register-box input[type="submit"]:hover {
+  background-color: #3e8e41;
+}

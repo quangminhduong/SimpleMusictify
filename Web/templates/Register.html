@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="register-box">
+        <h1>SimpleMusictify</h1>
+        <form action="/register" method="POST">
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <br>
+          <label for="user_name">Username:</label>
+          <input type="user_name" id="user_name" name="user_name" required>
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required>
+          <br>
+          <input type="submit" value="Register">
+          <p>Already have an account? Back to <a href="{{ url_for('login.login') }}">Login!</a></p>
+          {% if error %}
+            <p class="error" style="color: red">{{ error }}</p>
+          {% endif %}
+          {% if message %}
+            <script>alert("User Created, Return to Login"); window.location.href="{{ url_for('login.login') }}";</script>
+          {% endif %}
+
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
