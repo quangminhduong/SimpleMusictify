@@ -69,3 +69,113 @@ body {
 .login-box input[type="submit"]:hover, .register-box input[type="submit"]:hover {
   background-color: #3e8e41;
 }
+
+nav {
+  background-color: grey;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+nav .user-area {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+nav h1 {
+  color: white;
+  margin: 0;
+}
+
+nav .user-welcome {
+  margin-right: 20px;
+}
+
+nav input[type="submit"] {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.subscription-area {
+  background-color: green;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  overflow: auto;
+  max-height: 1000px;
+  position: absolute;
+  top: 10%;
+  left: 5%;
+}
+
+.subscription-area h2 {
+  margin-top: 0;
+  color: white;
+}
+
+.query-area {
+  background-color: orange;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  overflow: auto;
+  max-height: 1000px;
+  position: absolute;
+  top: 10%;
+  right: 5%;
+}
+
+.query-area h2 {
+  margin-top: 0;
+  color: white;
+}
+
+#query-results table, #subscriptions-results table {
+  width: 100%; /* set the total width of the table */
+  table-layout: fixed; /* prevent the table from adjusting its width */
+  border-collapse: collapse; /* merge borders between cells */
+}
+
+#query-results th,
+#query-results td, #subscriptions-results th, #subscriptions-results td {
+  width: 20%; /* set the width of each column */
+  text-align: center; /* center-align the contents */
+  border-bottom: 1px solid black; /* add borders to cells */
+  padding: 5px; /* add some padding for better readability */
+}
+
+.subscribe-btn, .remove-btn {
+  border-radius: 20px;
+  padding: 8px 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+}
+
+.subscribe-btn{
+  background-color: rgb(45, 182, 45);
+}
+
+.remove-btn {
+  background-color: rgb(218, 24, 24);
+}

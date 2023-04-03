@@ -9,18 +9,10 @@ def create_movie_table(dynamodb=None):
         'AttributeName': 'title',
         'KeyType': 'HASH' # Partition key
         },
-        {
-        'AttributeName': 'artist',
-        'KeyType': 'RANGE' # Sort key
-        }
         ],
         AttributeDefinitions=[
         {
         'AttributeName': 'title',
-        'AttributeType': 'S'
-        },
-        {
-        'AttributeName': 'artist',
         'AttributeType': 'S'
         },
         ],
