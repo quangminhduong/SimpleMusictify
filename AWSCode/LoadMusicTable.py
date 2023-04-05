@@ -1,8 +1,6 @@
 from decimal import Decimal
 import json
 import boto3
-import os
-print(os.getcwd())
 
 def load_music(musics, dynamodb=None):
     if not dynamodb:
@@ -18,6 +16,6 @@ def load_music(musics, dynamodb=None):
             music['release_year'] = music.pop('year')
             table.put_item(Item=music)
 if __name__ == '__main__':
-    with open("SimpleMusictify/AWSCode/a1.json") as json_file:
+    with open("a1.json") as json_file:
         music_list = json.load(json_file, parse_float=Decimal)
     load_music(music_list)

@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template, redirect, session
+from flask import Blueprint, request, render_template, redirect, session, url_for
 import boto3
 
 login_bp = Blueprint('login', __name__)
@@ -16,7 +16,7 @@ def login():
         user = validate_credentials(email, password)
         if user:
             session['email'] = email  # Store email in the session
-            return redirect('/home')
+            return redirect(url_for('home.home'))
         else:
             error_msg = "Email or password is invalid. Please try again."
             return render_template('Login.html', error=error_msg)

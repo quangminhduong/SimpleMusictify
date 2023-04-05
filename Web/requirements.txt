@@ -1,0 +1,4 @@
+flask
+boto3
+serverless-wsgi
+flask-cors

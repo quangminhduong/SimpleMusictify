@@ -6,6 +6,7 @@
   </head>
   <body>
     <nav>
+      <h1 style="color: black; text-align: center;padding-left:47%">SimpleMusictify</h1>
       <div class="user-area">
         <div class="user-welcome">
           <h1>Welcome {{ user_name }}!</h1>
@@ -18,7 +19,7 @@
     <div class="subscription-area">
       <h2>Subscription</h2>
       <div id="subscriptions-results">
-        {% if subscriptions %}
+        {% if subscriptions_items %}
           <table>
             <tr>
               <th>Title</th>
@@ -27,17 +28,17 @@
               <th>Image</th>
               <th></th>
             </tr>
-            {% for item in subscriptions %}
+            {% for subscriptions_item in subscriptions_items %}
             <tr>
-              <td>{{ item.title }}</td>
-              <td>{{ item.release_year }}</td>
-              <td>{{ item.artist }}</td>
-              <td><img src="{{ item.artist_img }}" alt="Album Art" width="50" height="50"></td>
+              <td>{{ subscriptions_item.title }}</td>
+              <td>{{ subscriptions_item.release_year }}</td>
+              <td>{{ subscriptions_item.artist }}</td>
+              <td><img src="{{ subscriptions_item.artist_img }}" alt="Album Art" width="50" height="50"></td>
               <td>
-                <form method="POST" action="{{ url_for('home.subscribe') }}">
-                  <input type="hidden" name="title" value="{{ item.title }}">
-                  <input type="hidden" name="release_year" value="{{ item.release_year }}">
-                  <input type="hidden" name="artist_img" value="{{ item.artist_img }}">
+                <form method="POST" action="{{ url_for('home.remove') }}">
+                  <input type="hidden" name="title" value="{{ subscriptions_item.title }}">
+                  <input type="hidden" name="release_year" value="{{ subscriptions_item.release_year }}">
+                  <input type="hidden" name="artist_img" value="{{ subscriptions_item.artist_img }}">
                   <button type="submit" class="remove-btn">Remove</button>
                 </form>
               </td>
@@ -61,7 +62,7 @@
       </form>
       {% if message %}
         <p>{{ message }}</p>
-      {% elif results %}
+      {% elif query_items %}
         <div id="query-results">
           <h3>Results</h3>
           <table>
@@ -72,18 +73,18 @@
               <th>Image</th>
               <th></th>
             </tr>
-            {% for item in results %}
+            {% for query_item in query_items %}
             <tr>
-              <td>{{ item.title }}</td>
-              <td>{{ item.release_year }}</td>
-              <td>{{ item.artist }}</td>
-              <td><img src="{{ item.artist_img }}" alt="Album Art" width="50" height="50"></td>
+              <td>{{ query_item.title }}</td>
+              <td>{{ query_item.release_year }}</td>
+              <td>{{ query_item.artist }}</td>
+              <td><img src="{{ query_item.artist_img }}" alt="Album Art" width="50" height="50"></td>
               <td>
                 <form method="POST" action="{{ url_for('home.subscribe') }}">
-                  <input type="hidden" name="title" value="{{ item.title }}">
-                  <input type="hidden" name="release_year" value="{{ item.release_year }}">
-                  <input type="hidden" name="artist" value="{{ item.artist }}">
-                  <input type="hidden" name="artist_img" value="{{ item.artist_img }}">
+                  <input type="hidden" name="title" value="{{ query_item.title }}">
+                  <input type="hidden" name="release_year" value="{{ query_item.release_year }}">
+                  <input type="hidden" name="artist" value="{{ query_item.artist }}">
+                  <input type="hidden" name="artist_img" value="{{ query_item.artist_img }}">
                   <button type="submit" class="subscribe-btn">Subscribe</button>
                 </form>
               </td>

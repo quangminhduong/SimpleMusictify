@@ -1,7 +1,8 @@
 import logging
 import boto3
 from botocore.exceptions import ClientError
-def create_bucket(bucket_name, region=None):
+def create_bucket(bucket_name, region="ap-southeast-2"):
+    
 # Create bucket
     try:
         if region is None:
@@ -16,7 +17,7 @@ def create_bucket(bucket_name, region=None):
         return False
     return True
 
-if create_bucket("trapforment4"):
-    print(f"Bucket trapforment4 created successfully.")
+if create_bucket("trapforment"):
+    print(f"Bucket trapforment created successfully.")
 else:
-    print(f"Bucket trapforment4 creation failed.")
+    print(f"Bucket trapforment creation failed.")

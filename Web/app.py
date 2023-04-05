@@ -1,6 +1,8 @@
 from flask import Flask
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS
 app.secret_key = 'secret_key_will_be_here_at_some_point'
 
 from Login import login_bp
